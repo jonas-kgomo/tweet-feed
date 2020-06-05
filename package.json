@@ -1,0 +1,25 @@
+{
+  "name": "feed-console",
+  "version": "1.0.0",
+  "description": "simulated twitter feed on console",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/jonas-kgomo/twitter-feed.git"
+  },
+  "keywords": [
+    "twitter"
+  ],
+  "author": "jonas-kgomo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/jonas-kgomo/twitter-feed/issues"
+  },
+  "homepage": "https://gitlab.com/jonas-kgomo/twitter-feed#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
