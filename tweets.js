@@ -17,9 +17,7 @@ function followParse(){
     }
 
     return follow;
-}
-    
-//console.log(follow);
+} 
 
 // tweet
 
@@ -39,24 +37,40 @@ function tweetParse(){
 
        // console.log(tweets);
     }
-
     return tweets;
 }
 
-//console.log(tweetParse());
-var feed = followParse();
-var twt = tweetParse();
+
+
 
 function tweetFeed(){
-     
+    var feed = followParse();
+    var twt = tweetParse();
+    //matching properties
+    //var props
       
 
-      seed = feed[0].user;
-      var flw = feed[0].follow;
-      twt = twt[0].tweet;
+              var seed = feed[0].user;
+                var flw = feed[0].follows;
+        
+                
+    for(var w = 0; w < feed.length; ++w){            
+               
+        for(var i = 0; i < twt.length; ++i){
+               console.log(seed);
 
-      console.log(seed, twt);
-      console.log(`@flw`);    
+                // followers array
+                for(var j = 0; j < flw.length; j++){
+                    if(flw[j] === twt[i].user){
+                    twt = twt[i].tweet;
+                    console.log(`\t@${flw[j]}: ${twt}`); 
+                    }
+                }
+        }
+
+    }   
+       
+        
        
   }
   
