@@ -47,34 +47,25 @@ function tweetFeed(){
     var feed = followParse();
     var twt = tweetParse();
     //matching properties
-    //var props
-      
-
-              var seed = feed[0].user;
-                var flw = feed[0].follows;
-        
-                
-    for(var w = 0; w < feed.length; ++w){            
-               
-        for(var i = 0; i < twt.length; ++i){
-               console.log(seed);
-
-                // followers array
-                for(var j = 0; j < flw.length; j++){
-                    if(flw[j] === twt[i].user){
-                    twt = twt[i].tweet;
-                    console.log(`\t@${flw[j]}: ${twt}`); 
-                    }
-                }
-        }
-
-    }   
-       
-        
-       
-  }
   
-//console.log(tweetFeed())
+        for(var i = 0; i < feed.length; ++i){
+
+               console.log(feed[i].user);
+               var flw = feed[i].follows;
+              
+                // followers array
+                for(var w = 0; w < twt.length; ++w){
+                    for(var j = 0; j < flw.length; j++){
+                                        
+                        if(flw[j] === twt[w].user){
+                       
+                        console.log(`\t@${flw[j]}: ${twt[w].tweet}`); 
+                      } 
+                } 
+                 
+        }
+   }
+} 
 
 
 tweetFeed();
