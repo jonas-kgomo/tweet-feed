@@ -42,7 +42,6 @@ function tweetParse(){
 
 
 
-
 function tweetFeed(){
     var feed = followParse();
     var twt = tweetParse();
@@ -68,4 +67,10 @@ function tweetFeed(){
 } 
 
 
-tweetFeed();
+//tweetFeed();
+
+
+module.exports = {
+    tweet : tweetParse(),
+    follow : followParse()
+}

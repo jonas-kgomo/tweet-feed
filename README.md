@@ -30,7 +30,20 @@ This will install all the dependencies used in the application. This project wor
 
 ## start the server
 ```
-npm start
+node index
 ```
 
-Open localhost:3000 in browser
+This will open `localhost:3000` in browser. 
+
+
+## console display
+
+To display the feed in the console, you can run 
+
+```
+node tweets.js
+```
+
+## API
+
+Our API gives you response about both user and follow endpoints, with `localhost:3000/tweets` and `localhost:3000/follow` respectively. 
