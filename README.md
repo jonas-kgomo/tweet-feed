@@ -47,3 +47,5 @@ node tweets.js
 ## API
 
 Our API gives you response about both user and follow endpoints, with `localhost:3000/tweets` and `localhost:3000/follow` respectively. 
+
+![img](https://gitlab.com/jonas-kgomo/tweet-feed/raw/master/media/main.png)
