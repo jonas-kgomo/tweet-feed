@@ -13,13 +13,84 @@
   </head>
 
   <body class="bg-blue-900">
+         <script>
 
-    <div class="text-lg font-bold text-center text-gray-400 m-5"> Console Twitter</div>
+          function newEl(type, attrs={}) {  
+              // TYPE  is header image, text
+             const el = document.createElement(type);
+             for (let attr in attrs) {
+                 const value = attrs[attr];
+                 if (attr == 'innerText') el.innerText = value;
+                 else el.setAttribute(attr, value);
+             }
+             return el;
+         }
+
+
+         async function loadTweets() {
+             const res = await fetch('http://localhost:3000/tweets');
+             const tweeter= await res.json();
+
+             const ctr = document.querySelector('.container');
+             
+             
+
+             tweeter.forEach( product => { 
+             const card = newEl('div', {class: 'card bg-blue-900 rounded-lg text-white'});
+             const author = newEl('h2', {innerText: product.user, class: 'px-2 font-semibold'});
+             const date = newEl('h4', {innerText: '@'+ product.user +' ·  02 June'}, {class: 'text-gray-500 font-medium'})
+            
+             const tweet = newEl('h4', {innerText: product.tweet, class: 'mx-2'})
+             const img = newEl('img', {src: '', alt: "", class: 'inline-block h-8 w-8 mx-2 -my-1 rounded-full bg-gray-500'});
+             const title = newEl('div', {class: 'flex m-1'})
+             
+             title.appendChild(img);
+             title.appendChild(author);
+             title.appendChild(date);
+             card.appendChild(title);
+             ctr.appendChild(card);
+             card.appendChild(tweet);
+              })
+
+         }
+
+         loadTweets();
+
+         async function loadFollows() {
+             const res = await fetch('http://localhost:3000/follow');
+             const tweeter= await res.json();
+
+             const ctr = document.querySelector('.followers');
+             
+  
+
+             tweeter.forEach( product => { 
+             const card = newEl('div', {class: 'card rounded-lg text-white'});
+             const author = newEl('h2', {innerText: product.user, class: 'm-2 font-semibold'});
+             const title = newEl('div', {class: 'flex m-1'});
+             const tweet = newEl('h5', {innerText: product.follows, class: 'm-2 font-semibold text-gray-400'});
+             const btn = newEl('a', {innerText: 'Follows', class: 'bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white m-1 py-1 px-2 text-sm border border-white hover:border-transparent rounded-full'});
+              
+             title.appendChild(author);
+             title.append(btn);
+             card.appendChild(title);
+             card.appendChild(tweet);
+             ctr.appendChild(card); 
+              })
+
+         }
+
+         loadFollows();
+
+   </script>
+
+
+<div class="text-lg font-bold text-center text-gray-400 m-5"> Console Twitter</div>
     
    
-<div class="flex">
+<div class="flex justify-between">
 
-        <div class="w-2/5 text-white h-12  pl-32 py-4 h-auto">
+        <div class="w-2/5 text-white h-12 mx-10 pl-32 py-4 h-auto">
             <nav class="mt-5 px-2">
                 <a href="#" class="group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full bg-blue-800 text-blue-300">
               <svg class="mr-4 h-6 w-6 " stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -74,10 +145,10 @@
             </div>                    
         </div> 
         <div class="container"></div>
-       </div>
+        </div>
 
 
- <div class="w-3/5"> 
+        <div class="w-3/5 "> 
        <div class="max-w-sm rounded-lg bg-blue-800 overflow-hidden shadow-lg m-4 mr-20">
         <div class="flex">
             <div class="flex-1 m-2">
@@ -95,62 +166,17 @@
             <div class="flex-1 ">
                 <div class="flex items-center w-48">
 
-                    <div class="followers"></div>
-                    <div>
-                      <img class="inline-block h-10 w-auto rounded-full ml-4 mt-2" src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png" alt="" />
-                    </div>
-                    <div class="ml-3 mt-3">
-                      <p class="text-base leading-6 font-medium text-white">
-                        Sonali Hirave
-                      </p>
-                      <p class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                        @ShonaDesign
-                      </p>
-                    </div>
+                    <div class="followers ml-3 mt-3"></div>
+                   
                   </div>
                 
             </div>
-            <div class="flex-1 px-4 py-2 m-2">
-                <a href="" class=" float-right">
-                    <button class="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded-full">
-                        Follow
-                      </button>  
-                </a>
-                
-            </div>
+           
         </div>
 
         <hr class="border-gray-600">
 
-        <!--second person who to follow--> 
-            
-        <div class="flex flex-shrink-0">
-            <div class="flex-1 ">
-                <div class="flex items-center w-48">
-                    <div>
-                      <img class="inline-block h-10 w-auto rounded-full ml-4 mt-2" src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png" alt="" />
-                    </div>
-                    <div class="ml-3 mt-3">
-                      <p class="text-base leading-6 font-medium text-white">
-                        Sonali Hirave
-                      </p>
-                      <p class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                        @ShonaDesign
-                      </p>
-                    </div>
-                  </div> 
-            </div>
-
-            <div class="flex-1 px-4 py-2 m-2">
-                <a href="" class=" float-right">
-                    <button class="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded-full">
-                        Follow
-                      </button>  
-                </a>
-                
-            </div>
-        </div>
-
+       
         <!--show more-->
 
         <div class="flex">
@@ -159,75 +185,9 @@
             </div>
         </div>
       </div>
-</div>
+        </div>
 
-    <script>
-
-          function newEl(type, attrs={}) {  
-              // TYPE  is header image, text
-             const el = document.createElement(type);
-             for (let attr in attrs) {
-                 const value = attrs[attr];
-                 if (attr == 'innerText') el.innerText = value;
-                 else el.setAttribute(attr, value);
-             }
-             return el;
-         }
-
-     
-
-         async function loadTweets() {
-             const res = await fetch('http://localhost:3000/tweets');
-             const tweeter= await res.json();
-
-             const ctr = document.querySelector('.container');
-             
-  
-
-             tweeter.forEach( product => { 
-             const card = newEl('div', {class: 'card bg-blue-900 rounded-lg text-white'});
-             const author = newEl('h2', {innerText: product.user, class: 'm-2 font-semibold'});
-             const tweet = newEl('h4', {innerText: product.tweet})
-             const img = newEl('img', {src: '', alt: "", class: 'inline-block h-8 w-8 mx-2 rounded-full bg-gray-500'});
-             const title = newEl('div', {class: 'flex m-1'})
-            
-             title.appendChild(img);
-             title.appendChild(author);
-             card.appendChild(title);
-             ctr.appendChild(card);
-             card.appendChild(tweet);
-              })
-
-         }
-
-         loadTweets();
-
-         async function loadFollows() {
-             const res = await fetch('http://localhost:3000/follow');
-             const tweeter= await res.json();
-
-             const ctr = document.querySelector('.followers');
-             
-  
-
-             tweeter.forEach( product => { 
-             const card = newEl('div', {class: 'card bg-blue-900 rounded-lg text-white'});
-             const author = newEl('h2', {innerText: product.user, class: 'm-2 font-semibold'});
-             const title = newEl('div', {class: 'flex m-1'});
-             const tweet = newEl('h4', {innerText: product.follows});
-            
-              
-             title.appendChild(author);
-             card.appendChild(title);
-             ctr.appendChild(card); 
-              })
-
-         }
-
-         loadFollows();
-
-   </script>
-
+ 
 <style>
  .container {
      display: flex-block;
