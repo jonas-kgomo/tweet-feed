@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title> App</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700" rel="stylesheet" />
+    
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"/>
+
+  </head>
+
+  <body class="bg-blue-900">
+
+    <div class="text-lg font-bold text-center text-gray-400 m-5"> Console Twitter</div>
+    
+   
+<div class="flex">
+
+        <div class="w-2/5 text-white h-12  pl-32 py-4 h-auto">
+            <nav class="mt-5 px-2">
+                <a href="#" class="group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full bg-blue-800 text-blue-300">
+              <svg class="mr-4 h-6 w-6 " stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"/>
+              </svg>
+              Home
+            </a>
+            <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full hover:bg-blue-800 hover:text-blue-300">
+              <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path></svg>
+              
+              Explore
+            </a>
+            <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-800 hover:text-blue-300">
+              <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+             Notifications
+            </a>
+            <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-800 hover:text-blue-300">
+              <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              Messages
+            </a>
+            <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-800 hover:text-blue-300">
+              <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+              Bookmarks
+            </a>
+            <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-800 hover:text-blue-300">
+              <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+              Lists
+            </a>
+                <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-800 hover:text-blue-300">
+              <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+              Profile
+            </a>
+                <a href="#" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-800 hover:text-blue-300">
+              <svg class="mr-4 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              More
+            </a>
+                
+                <button class="bg-blue-400 w-48 mt-5 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">
+                Tweet
+              </button>
+          </nav>
+        </div>
+               
+
+        <div class="w-3/5 py-10 h-auto ">
+        <div class="flex">
+            <div class="m-2 w-10 py-1">
+               <img class="inline-block h-10 w-10 rounded-full" src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png" alt="" />
+            </div>
+            <div class="flex-1 px-2 pt-2 mt-2">
+               <textarea class=" bg-transparent text-gray-400 font-medium text-lg w-full" rows="2" cols="50" placeholder="What's happening?"></textarea>
+            </div>                    
+        </div> 
+        <div class="container"></div>
+       </div>
+
+
+ <div class="w-3/5"> 
+       <div class="max-w-sm rounded-lg bg-blue-800 overflow-hidden shadow-lg m-4 mr-20">
+        <div class="flex">
+            <div class="flex-1 m-2">
+                <h2 class="px-4 py-2 text-xl w-48 font-semibold text-white">Who to follow</h2>
+            </div>
+       </div>
+
+
+        <hr class="border-gray-600">
+
+     
+            <!--first person who to follow--> 
+  
+        <div class="flex flex-shrink-0">
+            <div class="flex-1 ">
+                <div class="flex items-center w-48">
+
+                    <div class="followers"></div>
+                    <div>
+                      <img class="inline-block h-10 w-auto rounded-full ml-4 mt-2" src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png" alt="" />
+                    </div>
+                    <div class="ml-3 mt-3">
+                      <p class="text-base leading-6 font-medium text-white">
+                        Sonali Hirave
+                      </p>
+                      <p class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
+                        @ShonaDesign
+                      </p>
+                    </div>
+                  </div>
+                
+            </div>
+            <div class="flex-1 px-4 py-2 m-2">
+                <a href="" class=" float-right">
+                    <button class="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded-full">
+                        Follow
+                      </button>  
+                </a>
+                
+            </div>
+        </div>
+
+        <hr class="border-gray-600">
+
+        <!--second person who to follow--> 
+            
+        <div class="flex flex-shrink-0">
+            <div class="flex-1 ">
+                <div class="flex items-center w-48">
+                    <div>
+                      <img class="inline-block h-10 w-auto rounded-full ml-4 mt-2" src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png" alt="" />
+                    </div>
+                    <div class="ml-3 mt-3">
+                      <p class="text-base leading-6 font-medium text-white">
+                        Sonali Hirave
+                      </p>
+                      <p class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
+                        @ShonaDesign
+                      </p>
+                    </div>
+                  </div> 
+            </div>
+
+            <div class="flex-1 px-4 py-2 m-2">
+                <a href="" class=" float-right">
+                    <button class="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded-full">
+                        Follow
+                      </button>  
+                </a>
+                
+            </div>
+        </div>
+
+        <!--show more-->
+
+        <div class="flex">
+            <div class="flex-1 p-4">
+                <h2 class="px-4 ml-2 w-48 font-bold text-blue-400">Show more</h2>  
+            </div>
+        </div>
+      </div>
+</div>
+
+    <script>
+
+          function newEl(type, attrs={}) {  
+              // TYPE  is header image, text
+             const el = document.createElement(type);
+             for (let attr in attrs) {
+                 const value = attrs[attr];
+                 if (attr == 'innerText') el.innerText = value;
+                 else el.setAttribute(attr, value);
+             }
+             return el;
+         }
+
+     
+
+         async function loadTweets() {
+             const res = await fetch('http://localhost:3000/tweets');
+             const tweeter= await res.json();
+
+             const ctr = document.querySelector('.container');
+             
+  
+
+             tweeter.forEach( product => { 
+             const card = newEl('div', {class: 'card bg-blue-900 rounded-lg text-white'});
+             const author = newEl('h2', {innerText: product.user, class: 'm-2 font-semibold'});
+             const tweet = newEl('h4', {innerText: product.tweet})
+             const img = newEl('img', {src: '', alt: "", class: 'inline-block h-8 w-8 mx-2 rounded-full bg-gray-500'});
+             const title = newEl('div', {class: 'flex m-1'})
+            
+             title.appendChild(img);
+             title.appendChild(author);
+             card.appendChild(title);
+             ctr.appendChild(card);
+             card.appendChild(tweet);
+              })
+
+         }
+
+         loadTweets();
+
+         async function loadFollows() {
+             const res = await fetch('http://localhost:3000/follow');
+             const tweeter= await res.json();
+
+             const ctr = document.querySelector('.followers');
+             
+  
+
+             tweeter.forEach( product => { 
+             const card = newEl('div', {class: 'card bg-blue-900 rounded-lg text-white'});
+             const author = newEl('h2', {innerText: product.user, class: 'm-2 font-semibold'});
+             const title = newEl('div', {class: 'flex m-1'});
+             const tweet = newEl('h4', {innerText: product.follows});
+            
+              
+             title.appendChild(author);
+             card.appendChild(title);
+             ctr.appendChild(card); 
+              })
+
+         }
+
+         loadFollows();
+
+   </script>
+
+<style>
+ .container {
+     display: flex-block;
+     
+ }
+ .card {
+     margin: 14px 14px 14px 14px;
+     padding: 10px;
+     
+ }
+</style>
+</body>
+
+
+</html>
