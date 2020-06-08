@@ -67,7 +67,7 @@ function tweetFeed(){
 } 
 
 
-//tweetFeed();
+tweetFeed();
 
 
 module.exports = {
